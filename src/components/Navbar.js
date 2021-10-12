@@ -6,6 +6,7 @@ import { Button } from './Button'
 import Bars from '../images/bars.svg'
 
 const Nav = styled.nav`
+  background: #cd853f;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -68,11 +69,11 @@ const NavBtn = styled.div`
   }
 `
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
   return (
     <Nav>
       <Logo to='/'>ELIXR</Logo>
-      <MenuBars />
+      <MenuBars onClick={toggle} />
       <NavMenu>
         {menuData.map((item, index) => (
           <NavMenuLinks to={item.link} key={index}>
